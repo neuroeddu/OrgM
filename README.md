@@ -1,24 +1,8 @@
-# 2D-image-marker-quantification
-Method and Code for analysis of 2D cultures dopaminergic neurons used in Mohammed et al
+# OrgM and Fiji macro for automated measurement of object area, diameter and roundness from bright field images
 
-An ImageJ macro that analyzes sets of fluorescence microscopy images.
-The data must be in one parent directory with subdirectories containing images. The images must be one
-per channel with matching names (a split image). The names of the image files must also have a specific
-format, see notes of image naming below.
+This program is meant to take several meaurements of individual organoids or other objects in bright field images. The program can read in one folder containing .tif files or a folder containing subdirectories of tif files. 
 
-The macro first asks the user to choose the input, consisting of the directory two 
-layers above images, and output directory, in which it will save the data acquired. 
-The macro will ask the user to optionally submit a naming convention file, 
-which is a table corresponding to what each well in the plate should be called in the 
-rows of the output, as well as a threshold file which can be used to set up specific 
-thresholds for each marker. Finally, the macro asks the user for the relevant markers 
-and corresponding channel  in each image subfolder. 
+To use the program follow the is a step by step user guide. 
+Sample input images can be found the folder input and sample output files can be found in the folder output. 
 
-The macro will loop through each subfolder at a time, detecting and measuring the 
-colocalization and other relevant information for each nuclei detected. 
-
-
-Notes on image names:
-Either change your image names to fit the format we have included in the code or change line
-XXXX to fit the naming convention of your images. 
-Images must be named in the 
+Created by Eddie C. Cai and Rhalena A. Thomas
