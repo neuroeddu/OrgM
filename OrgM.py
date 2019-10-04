@@ -53,7 +53,7 @@ if gd.getNextChoice() == "Yes, enable watershed":
 
 gd = GenericDialog("Other Thresholds.")
 gd.addMessage("Ajust after you have determined if new thresholds are needed.")
-gd.addStringField("Round threshold", "0.62")
+gd.addStringField("Bumpyness threshold", "0.62")
 gd.addStringField("Area Threshold", "50000")
 gd.addStringField("Minimum Size", "3000")
 gd.showDialog()
@@ -82,6 +82,8 @@ pix_height = gd.getNextString()
 dc = DirectoryChooser("Choose an input directory")  
 inputDirectory = dc.getDirectory() 
 
+WaitForUserDialog("Title", "Next you'll be asked to select the output directory").show()
+
 dc = DirectoryChooser("Choose an output directory")
 outputDirectory = dc.getDirectory()
 
@@ -89,7 +91,7 @@ with open(outputDirectory + "output_"+datetime.datetime.now().strftime("%Y-%m-%d
 
 # set the output column names for the csv sheet
 
-	output.write("Subfolder, File Name,Feret,MinFeret,Average Feret,Area,Equivalent Circle Diameter, Ellipse Major, Ellipse Minor, Circularity,Roundness,Solidity, MeetsCriteria \n")
+	output.write("Subfolder, File Name,Max Diameter uM,Min Diameter uM,Diameter uM,Area,Equivalent Circle Diameter, Ellipse Major, Ellipse Minor, Circularity,Bumpy,Solidity, Meets Criteria \n")
 	subfolders = []
 
 	# Finds subfolders in input directory
