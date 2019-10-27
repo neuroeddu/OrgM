@@ -28,7 +28,7 @@ from ij.plugin.filter import ParticleAnalyzer
 thresholdMode = False
 
 gd = GenericDialog("Set Threshold Mode")
-gd.addChoice("Would you like to enable thresholding mode?", ["No, run the normal macro", "Yes, enable thresholding mode"], "No")
+gd.addChoice("Would you like to enable thresholding mode?", ["Yes, enable thresholding mode","No, run the normal macro"], "Yes")
 gd.showDialog()
 if gd.getNextChoice() == "Yes, enable thresholding mode":
 	thresholdMode = True
@@ -133,8 +133,6 @@ with open(outputDirectory + "output_"+datetime.datetime.now().strftime("%Y-%m-%d
 				if watershedMode:
 					IJ.run(imp, "Watershed", "")
 
-
-
 				#Measure particles 
 
 				table = ResultsTable()
@@ -149,7 +147,7 @@ with open(outputDirectory + "output_"+datetime.datetime.now().strftime("%Y-%m-%d
 
 				if thresholdMode:
 					imp.show()
-					#WaitForUserDialog("Title", "I want to see the ROI").show()
+					WaitForUserDialog("Title", "I want to see the ROI").show()
 
 
 				# Check if Column even exists (in case it didn't measure anything)
