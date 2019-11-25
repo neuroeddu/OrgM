@@ -28,7 +28,7 @@ from ij.plugin.filter import ParticleAnalyzer
 thresholdMode = False
 
 gd = GenericDialog("Set Threshold Mode")
-gd.addChoice("Would you like to enable thresholding mode?", ["No, run the normal macro", "Yes, enable thresholding mode"], "No")
+gd.addChoice("Would you like to enable thresholding mode?", ["Yes, enable thresholding mode"], "No, run the normal macro", "Yes")
 gd.showDialog()
 if gd.getNextChoice() == "Yes, enable thresholding mode":
 	thresholdMode = True
