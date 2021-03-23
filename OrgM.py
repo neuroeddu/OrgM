@@ -28,7 +28,7 @@ from ij.plugin.filter import ParticleAnalyzer
 thresholdMode = False
 
 gd = GenericDialog("Set Threshold Mode")
-gd.addChoice("Would you like to enable thresholding mode?", ["Yes, enable thresholding mode"], "No, run the normal macro", "Yes")
+gd.addChoice("Would you like to enable thresholding mode?", ["Yes, enable thresholding mode", "No, run the normal macro"], "Yes, enable thresholding mode")
 gd.showDialog()
 if gd.getNextChoice() == "Yes, enable thresholding mode":
 	thresholdMode = True
@@ -39,7 +39,7 @@ if gd.getNextChoice() == "Yes, enable thresholding mode":
 watershedMode = False
 
 gd = GenericDialog("Set Watershed Mode")
-gd.addChoice("Would you like to enable watershedding?", ["No, do not watershed", "Yes, enable watershed"], "No")
+gd.addChoice("Would you like to enable watershedding?", ["No, do not watershed", "Yes, enable watershed"], "No, do not watershed")
 gd.showDialog()
 if gd.getNextChoice() == "Yes, enable watershed":
 	watershedMode = True
